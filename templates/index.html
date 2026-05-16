@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Student Result Prediction
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+Student Result Prediction
+</h1>
+
+<form method="POST">
+
+<input
+type="number"
+step="any"
+name="study"
+placeholder="Study Hours"
+required>
+
+<input
+type="number"
+step="any"
+name="attendance"
+placeholder="Attendance %"
+required>
+
+<input
+type="number"
+step="any"
+name="internal"
+placeholder="Internal Marks"
+required>
+
+<input
+type="number"
+step="any"
+name="assignment"
+placeholder="Assignment Marks"
+required>
+
+<input
+type="number"
+step="any"
+name="previous"
+placeholder="Previous Marks"
+required>
+
+<button type="submit">
+Predict Result
+</button>
+
+</form>
+
+{% if prediction != "" %}
+
+<div class="result-box">
+
+<h2>
+Predicted Marks:
+{{ prediction }}%
+</h2>
+
+<h2>
+Grade:
+{{ grade }}
+</h2>
+
+<h2>
+Status:
+{{ status }}
+</h2>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
